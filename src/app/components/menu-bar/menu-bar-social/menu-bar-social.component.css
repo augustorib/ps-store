@@ -1,0 +1,36 @@
+.menu-bar-social__container {
+    display: flex;
+    align-items: center;
+    min-width: 120px;
+    justify-content: end;
+}
+
+.menu-bar-social__container > ul {
+    display: flex;
+    list-style-type: none;
+    
+}
+
+.menu-bar-social__container > ul > li {
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 25px;
+    
+}
+
+.menu-bar-social__container > ul > li > a {
+    text-decoration: none;
+    padding: 2px;
+    color: rgb(7, 7, 7);
+    font-family: 'Segoe UI';
+}
+
+.menu-bar-social__container > ul > li > a.linkedin:hover {
+    color: rgb(4, 4, 168);
+    font-weight: 600;
+ }
+
+ .menu-bar-social__container > ul > li > a.github:hover {
+    color: rgb(101, 4, 165);
+    font-weight: 600;
+ }
