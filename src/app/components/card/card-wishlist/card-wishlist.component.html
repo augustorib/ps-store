@@ -1,4 +1,4 @@
 <div class="card-wishlist__container">
-    <fa-icon *ngIf="mostrarOffWishlist" [icon]="offWishlist" (click)="gerenciarWishList()"></fa-icon>
-    <fa-icon [ngStyle]="{'color': corOnWishlist}" *ngIf="mostrarOnWishlist" [icon]="onWishlist" (click)="gerenciarWishList()"></fa-icon>
+    <fa-icon *ngIf="mostrarOffWishlist" [icon]="offWishlist" (click)="gerenciarWishList(gameName)"></fa-icon>
+    <fa-icon [ngStyle]="{'color': corOnWishlist}" *ngIf="mostrarOnWishlist" [icon]="onWishlist" (click)="gerenciarWishList(gameName)"></fa-icon>
 </div>  

@@ -13,7 +13,10 @@ import { CardWishlistComponent } from './card-wishlist/card-wishlist.component';
 export class CardComponent {
 
   @Input()
-  gameCover:string = "";
+  gameName:string = ""
+
+  @Input()
+  gameCover:string = ""
 
   @Input()
   gameLabel: string = ""
