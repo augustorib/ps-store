@@ -1,0 +1,22 @@
+.card-wishlist__container {
+    position: absolute;
+    z-index: 10;
+    font-size: 30px;
+    width: 100%;
+    text-align: end;
+ 
+
+}
+
+.card-wishlist__container > fa-icon
+{
+    position: relative;
+    right: 15px;
+    top: 10px;   
+    
+}
+
+.card-wishlist__container > fa-icon:hover
+{ 
+    color: red;
+}
