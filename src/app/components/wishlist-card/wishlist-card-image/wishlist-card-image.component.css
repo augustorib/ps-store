@@ -1,0 +1,21 @@
+.wishlist-card-image__container{
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: white;
+    overflow: hidden;
+    border-right: solid 2px #99a1c4e5;
+
+}
+
+.wishlist-card-image__image{
+    min-width: 100%;
+    min-height: 100%;
+    transition: transform 2s;
+
+}
+
+.wishlist-card-image__image:hover{
+    transform: translateY(-80px);
+}
