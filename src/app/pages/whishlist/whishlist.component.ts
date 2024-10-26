@@ -24,9 +24,6 @@ export class WhishlistComponent implements OnInit{
   constructor(private service: WhishlistService, private bdservice: BdService)
   {
      this.wishlistGames = this.bdservice.getGamesById(this.service.gameList)
-
-     
-     console.log(this.wishlistGames)
   }
 
   ngOnInit(): void {

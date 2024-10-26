@@ -8,5 +8,15 @@
     color: white;
     background-color: rgba(22, 20, 20, 0.521);
     gap: 15px;
-    
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI';  
+}
+
+.wishlist-card-info__container > h2{
+    font-size: 35px;
+}
+
+.wishlist-card-info__container > p{
+    font-size: 15px;
 }
