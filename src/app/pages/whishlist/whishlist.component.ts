@@ -5,19 +5,21 @@ import { WishlistCardComponent } from '../../components/wishlist-card/wishlist-c
 import { CardWishlistComponent } from "../../components/card/card-wishlist/card-wishlist.component";
 import { BdService } from '../../services/bd.service';
 import { GameModel } from '../../models/gameModel';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
 @Component({
   selector: 'app-whishlist',
   standalone: true,
-  imports: [CommonModule, WishlistCardComponent, CardWishlistComponent],
+  imports: [CommonModule, WishlistCardComponent, CardWishlistComponent, NgxPaginationModule],
   templateUrl: './whishlist.component.html',
   styleUrl: './whishlist.component.css'
 })
 export class WhishlistComponent implements OnInit{
 
   hasGamesOnList:boolean = false
+  currentPage:number = 1 
 
   wishlistGames:GameModel[] = []
 

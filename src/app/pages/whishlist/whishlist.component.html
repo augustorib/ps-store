@@ -2,16 +2,18 @@
 
     <ng-container *ngIf="hasGamesOnList, else noListedGames">
         <app-wishlist-card
-            *ngFor="let game of wishlistGames"
+            *ngFor="let game of wishlistGames | paginate: { itemsPerPage: 4, currentPage: currentPage }"
             [gameCover]="game.cover"
             [gameName]="game.name"
             [gameDescription]="game.description"
             [gamePrice]="game.price"
         />
+
+        <pagination-controls class="custom-pagination" (pageChange)="currentPage = $event"></pagination-controls>
     </ng-container>
 
     <ng-template #noListedGames>
-        <h1>Nenhum jogo adcionado a Wishlist!</h1>
+        <h1>Nenhum jogo adicionado na Wishlist!</h1>
     </ng-template> 
 
 </div>
