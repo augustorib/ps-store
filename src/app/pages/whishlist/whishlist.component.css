@@ -6,3 +6,10 @@
     flex-direction: column;
     gap: 15px;
 }
+
+.whishlist__container > h1
+{
+    color: white;
+    text-align: center;
+
+}

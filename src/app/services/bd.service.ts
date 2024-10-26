@@ -66,7 +66,7 @@ export class BdService {
 
     if(gamesInWishList.length === 0)
     {
-      return [defaultValue()]
+      return []
     }
 
     return gamesInWishList

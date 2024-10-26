@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WhishlistService } from '../../services/whishlist.service';
 import { WishlistCardComponent } from '../../components/wishlist-card/wishlist-card.component';
@@ -15,13 +15,23 @@ import { GameModel } from '../../models/gameModel';
   templateUrl: './whishlist.component.html',
   styleUrl: './whishlist.component.css'
 })
-export class WhishlistComponent{
+export class WhishlistComponent implements OnInit{
+
+  hasGamesOnList:boolean = false
 
   wishlistGames:GameModel[] = []
 
   constructor(private service: WhishlistService, private bdservice: BdService)
   {
      this.wishlistGames = this.bdservice.getGamesById(this.service.gameList)
+
+     
+     console.log(this.wishlistGames)
+  }
+
+  ngOnInit(): void {
+    if(this.wishlistGames.length > 0 )
+      this.hasGamesOnList = true;
   }
 
 

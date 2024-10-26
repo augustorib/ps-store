@@ -1,9 +1,18 @@
-<div class="whishlist__container">
-    <app-wishlist-card
-       *ngFor="let game of wishlistGames"
-       [gameCover]="game.cover"
-       [gameName]="game.name"
-       [gameDescription]="game.description"
-       [gamePrice]="game.price"
-    />
+<div class="whishlist__container"> 
+
+    <ng-container *ngIf="hasGamesOnList, else noListedGames">
+        <app-wishlist-card
+            *ngFor="let game of wishlistGames"
+            [gameCover]="game.cover"
+            [gameName]="game.name"
+            [gameDescription]="game.description"
+            [gamePrice]="game.price"
+        />
+    </ng-container>
+
+    <ng-template #noListedGames>
+        <h1>Nenhum jogo adcionado a Wishlist!</h1>
+    </ng-template> 
+
 </div>
+
