@@ -5,6 +5,8 @@ export type GameModel = {
     description:string
     price:string
     cover:string
+    label:string
+    type:string
     
 }
 
@@ -16,7 +18,9 @@ export function defaultValue():GameModel
         description:"",
         name:"",
         nickname:"",
-        price:""
+        price:"",
+        label:"",
+        type:""
     }
 
     return model
