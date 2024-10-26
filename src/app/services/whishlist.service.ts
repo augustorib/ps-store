@@ -7,6 +7,8 @@ export class WhishlistService {
 
   listaDejogos:string[] = [];
 
+  gameList:number[] = [];
+
   constructor() { }
 
   obterListaDeJogos(): string[]
@@ -25,5 +27,25 @@ export class WhishlistService {
 
     if(index > -1)
     this.listaDejogos.splice(index, 1)
+  }
+
+
+  //Implementando coma utilização de Ids, para utilizar em conjunto com o bdService
+  obterListaDeJogosPorId(): number[]
+  {
+    return this.gameList
+  }
+
+  adicionarJogoNaWishlistPorId(id:number) : void
+  {
+    this.gameList.push(id);
+  }
+
+  removerJogoNaWishLlistPorId(id:number): void
+  {
+    const index:number = this.gameList.indexOf(id)
+
+    if(index > -1)
+    this.gameList.splice(index, 1)
   }
 }

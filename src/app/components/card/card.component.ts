@@ -13,6 +13,9 @@ import { CardWishlistComponent } from './card-wishlist/card-wishlist.component';
 export class CardComponent {
 
   @Input()
+  gameId:number = 0
+  
+  @Input()
   gameName:string = ""
 
   @Input()

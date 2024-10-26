@@ -16,8 +16,11 @@ import { WhishlistService } from '../../../services/whishlist.service';
 export class CardWishlistComponent implements OnInit {
 
   @Input()
+  gameId:number = 0
+
+  @Input()
   gameName:string = ""
-  
+
   //Icone para indicar se o jogo está na wishlist ou não
   offWishlist = faHeartRegular
   onWishlist = faHeartSolid
@@ -36,31 +39,35 @@ export class CardWishlistComponent implements OnInit {
     this.verificarExibicaoIcone()
   }
 
-  gerenciarWishList(gameName:string):void
+  gerenciarWishList(gameId:number):void
   {
   
     if(this.mostrarOffWishlist)
     {
       this.inverterValoresBoolean()
-      this.adicionarJogoNaWishList(gameName)
+      //this.adicionarJogoNaWishList(gameName)
+      this.adicionarJogoNaWishList(gameId)
     }
 
     else
     {
       this.inverterValoresBoolean()
-      this.removerJogoNaWishList(gameName)
+      //this.removerJogoNaWishList(gameName)
+      this.removerJogoNaWishList(gameId)
     }
 
   }
   
-  adicionarJogoNaWishList(gameName:string):void
+  adicionarJogoNaWishList(gameId:number):void
   {
-    this.service.adicionarJogoNaWishlist(gameName)
+    //this.service.adicionarJogoNaWishlist(gameName)
+    this.service.adicionarJogoNaWishlistPorId(gameId)
   }
 
-  removerJogoNaWishList(gameName:string):void
+  removerJogoNaWishList(gameId:number):void
   {
-    this.service.removerJogoNaWishLlist(gameName)
+    //this.service.removerJogoNaWishLlist(gameName)
+    this.service.removerJogoNaWishLlistPorId(gameId)
   }
 
   inverterValoresBoolean(): void
@@ -71,9 +78,11 @@ export class CardWishlistComponent implements OnInit {
 
   verificarExibicaoIcone():void
   {
-    const jogosNaWishlist = this.service.obterListaDeJogos()
+    //const jogosNaWishlist = this.service.obterListaDeJogos()
 
-    if(jogosNaWishlist.includes(this.gameName))
+    const jogosNaWishlist = this.service.obterListaDeJogosPorId()
+
+    if(jogosNaWishlist.includes(this.gameId))
     {
       this.mostrarOnWishlist = true
       this.mostrarOffWishlist = false
