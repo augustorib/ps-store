@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-wishlist-card-info',
@@ -9,10 +9,12 @@ import { Component } from '@angular/core';
 })
 export class WishlistCardInfoComponent {
 
-  
+  @Input()
   gameName:string =""
 
+  @Input()
   gamePrice:string =""
 
-  descricao:string =""
+  @Input()
+  gameDescription:string =""
 }
